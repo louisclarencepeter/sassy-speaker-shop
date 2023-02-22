@@ -1,0 +1,116 @@
+@use 'base' as *;
+
+@mixin article-style {
+
+  width: 25rem;
+  height: 35rem;
+  padding: 5rem 2rem;
+  background-size: cover;
+  background-image: url();
+
+  h1 {
+    font-size: 1.9rem;
+    color: white;
+  }
+
+  img {
+    background-color: white;
+    width: 3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.25);
+  }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  img {
+    height: 3rem;
+    width: max-content;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+main {
+  min-height: calc(100vh - 10rem - 8rem);
+
+  .article-section {
+    display: flex;
+    margin: 3rem 0;
+    padding: 2rem;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+
+    .button {
+      display: flex;
+      background-color: black;
+      color: white;
+      width: max-content;
+      padding: 1rem 2rem;
+      gap: 1rem;
+      align-self: flex-end;
+      margin-top: 3rem;
+
+      img {
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.article-1 {
+  @include article-style;
+  background-image: url('../images/white-box.jpg');
+
+  background-position: center;
+}
+
+.article-2 {
+  @include article-style;
+  background-image: url('../images/room.jpg');
+  background-position: left center;
+}
+
+.article-3 {
+  @include article-style;
+  background-image: url('../images/black-white.jpg');
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+}
